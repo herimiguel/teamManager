@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Preferred Position</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let player of players'>
+      <td>{{player.name}}</td>
+      <td>{{player.pref_pos}}</td>
+      <td><button (click)='sendDestroy(player._id)'>Delete</button></td>
+    </tr>
+  </tbody>
+</table>

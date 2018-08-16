@@ -1,0 +1,21 @@
+<div>
+    <h1>Add Player</h1>
+    <form #formData='ngForm' (submit)='sendPlayer()'>
+        <p>Player Name: <input
+          type="text"
+          name="name"
+          required
+          minlength = '2'
+          [(ngModel)]='player.name'
+          #name = 'ngModel'>
+        </p>
+        <p class='red' *ngIf='name.errors'>*Name must be at least 2 characters in length</p>
+        <p>Preferred Position: <input
+          type="text"
+          name="pref_pos"
+          [(ngModel)]='player.pref_pos'
+          >
+        </p>
+        <input type="submit" value='Add' [disabled]='!formData.valid'>
+      </form>
+  </div>
